@@ -1,0 +1,639 @@
+KURUMSAL KAYNAK PLANLAMA UYARLAMA RAPORU
+Yazarlar :
+Yasin Yayın – 222212007 , Lisans Eğitimi, Düzce Üniversitesi Yönetim Bilişim Sistemleri Bölümü , Düzce , Türkiye
+Atahan Sakman – 222212010 , Lisans Eğitimi, Düzce Üniversitesi Yönetim Bilişim Sistemleri Bölümü , Düzce , Türkiye
+
+2.1. Modül Adı: Sistem Yönetimi Modülü
+2.2. Giriş 
+Bu çalışma kapsamında YBS SU firmasına AVAKOZA ERP sisteminin “Sistem Yönetimi Modülü” uyarlanacaktır. Sistem yönetimi modülü, tüm ERP modüllerinin çalışmasını sağlayan temel altyapıdır. Bu modül aracılığıyla kullanıcı tanımlamaları, yetkilendirmeler, sistem yedeklemeleri ve genel sistem parametrelerinin kontrolü sağlanır. Uyarlama sürecinde, kullanıcı ihtiyaçları analiz edilerek güvenlik, erişim ve sistem kararlılığı ön planda tutulmuştur. ERP yazılımının sürdürülebilirliği ve veri güvenliği açısından sistem modülünün önemi büyüktür. Grup olarak bu modülün firmaya uyarlanmasının bilgi güvenliği ve sistem performansı açısından ciddi katkılar sağlayacağını düşünüyoruz.
+
+ 2.3. Modül Tanımı 
+Sistem modülü, bir ERP yazılımının merkezî yapı taşlarından biridir ve ERP sisteminin tüm modüllerinin sorunsuz çalışabilmesi için gerekli olan altyapıyı sağlar. Kullanıcı tanımlamaları, yetkilendirme, erişim kontrolü, sistem parametrelerinin belirlenmesi, veri güvenliği, yedekleme ve sistem bakımı gibi kritik işlevleri barındırır. Bu yönüyle hem teknik hem de yönetsel süreçlerin temelini oluşturur.
+Sistem modülünü “kurumsal kaynak planlama yazılımında kullanıcı erişimi, sistem ayarları ve güvenliğin merkezi olarak yönetildiği bölüm” olarak tanımlamaktadır (Monk & Wagner, 2013). ise bu modülün, ERP sistemlerinin sürdürülebilirliği açısından stratejik önem taşıdığını ve bilgi güvenliği ile sistem yönetimini birlikte ele aldığını vurgulamaktadır (Klaus, Rosemann & Gable 2000). Sistem modülü, “kullanıcıların rolleri doğrultusunda sisteme erişimini düzenleyen, yazılımın genel ayarlarının yapıldığı ve diğer modüllerin sağlıklı çalışmasını sağlayan çekirdek yapı” olarak tanımlanır (Özdemir , 2018).
+AVAKOZA ERP yazılımında sistem modülü, kullanıcı profillerinin oluşturulmasından başlayarak; erişim kısıtlamaları, sistem güncellemeleri, lisans yönetimi ve yedekleme planlamalarına kadar geniş bir yelpazede işlevsellik sunar. Sistem modülünün doğru yapılandırılması, tüm ERP sistemi performansının ve güvenliğinin temelini oluşturur.
+	
+2.4. Modülün Amacı
+Sistem Yönetimi Modülü, kurumsal kaynak planlama (ERP) sistemlerinde, altyapının güvenli, sürekli ve etkin bir şekilde işlemesini sağlamak amacıyla geliştirilmiş kritik bir bileşendir. Bu modül, kullanıcı yönetimi, erişim kontrolleri, sistem güvenliği, veri yedekleme ve loglama işlemleri gibi teknik işlevleri kapsar ve tüm ERP sisteminin sağlıklı çalışması için temel oluşturur.
+Literatürde sistem yönetimi modülünün amaçları arasında; kullanıcıların rollerine göre erişim yetkilerinin tanımlanması, sistem kaynaklarının izlenmesi, hataların önceden tespit edilmesi ve sistem sürekliliğinin sağlanması gibi başlıklar yer almaktadır (Özdemir, 2021). Ayrıca sistem yönetimi, ERP sistemlerinin zaman içinde değişen ihtiyaçlara uyum sağlamasını da kolaylaştırır (Bradford, 2015).
+Bu modülün temel amaçları aşağıdaki gibi özetlenebilir:
+•	ERP sisteminin kesintisiz ve güvenli çalışmasını sağlamak,
+•	Kullanıcı ve yetki yönetimini merkezi olarak yapılandırmak,
+•	Yedekleme ve geri yükleme süreçlerini kontrol altında tutmak,
+•	Sistem loglarını ve izleme araçlarını kullanarak denetim kabiliyeti kazandırmak,
+•	Siber güvenlik önlemleri ile sisteme dış müdahaleleri önlemek,
+•	Performans yönetimi ile sistem verimliliğini sürekli ölçümlemek.
+Fikri olarak YBS SU işletmesine özgü olarak, modül aynı zamanda aşağıdaki hedefleri de taşımaktadır:
+•	Farklı departmanlardaki kullanıcıların erişim yetkilerini kişiselleştirerek veri bütünlüğünü sağlamak,
+•	Gelecekteki denetim ve dış değerlendirme süreçlerine hazır olmak adına log kayıtlarını düzenli tutmak,
+•	Şirketin büyümesiyle birlikte modüler yapı sayesinde sistemin kolayca ölçeklenebilmesini sağlamak.
+Bu bağlamda, Sistem Yönetimi Modülü, yalnızca teknik bir altyapı çözümü değil, aynı zamanda ERP sisteminin başarısı için stratejik bir bileşen olarak değerlendirilmelidir.
+
+Teknik Yönetim Açısından Amaçlar:
+a)	Kullanıcı ve Yetki Yönetimi: 
+Farklı departmanlardan çalışanların sisteme erişim düzeylerinin belirlenmesi, sadece ilgili verilere erişebilmeleri için kullanıcı rolleri tanımlanması sistem modülünün ana hedeflerinden biridir. Bu sayede hem bilgi güvenliği sağlanmakta hem de operasyonel süreçlerde sadeleşme gerçekleşmektedir.
+b)	Sistem Performansının İzlenmesi: 
+Sunucu yükü, veri akışı, oturum trafiği gibi sistemsel parametrelerin anlık olarak izlenebilmesi, olası darboğazların erken tespiti açısından büyük önem taşır. Sistem modülü bu verileri toplayarak yöneticilere analiz imkânı sunar.
+c)	Veri Güvenliği ve Yedekleme: 				
+ERP sistemleri kurumun en kritik verilerini barındırdığından, sistem modülü aracılığıyla düzenli yedekleme planları uygulanır. Bu sayede olası veri kayıplarına karşı hızlı kurtarma sağlanır.
+d)	Erişim Güvenliği ve Olay Kaydı (Loglama): 
+Kim hangi veriye, ne zaman ve nasıl erişti? Bu sorulara yanıt verebilmek; hem denetim hem de olası suistimalleri önleme açısından kritiktir. Sistem modülü tüm oturumları ve işlemleri kayıt altına alarak şeffaf bir izleme ortamı sunar.
+İşletme Sürekliliği Açısından Amaçlar:
+a)	Kesintisiz Hizmet Sağlamak: Sistem modülü; yazılım güncellemeleri, ağ bağlantı kontrolü, sistem saat senkronizasyonu gibi arka planda çalışan unsurlar sayesinde ERP'nin kesintisiz çalışmasını destekler.
+b)	Kurulum ve Konfigürasyon Yönetimi: AVAKOZA ERP’nin kurulum süreci, ilk sistem ayarlarının yapılması ve firma bazlı özelleştirmelerin gerçekleştirilmesi yine sistem modülü üzerinden yürütülür.
+c)	Uyumluluk ve Standartlaşma: ISO 27001 gibi bilgi güvenliği standartlarıyla uyumlu çalışmayı hedefleyen sistem modülü, güvenlik ilkeleriyle birlikte kurumsal IT yönetim standartlarını da destekler.
+________________________________________
+Sonuç olarak, sistem modülü yalnızca bir “arka plan aracı” değil; YBS Su gibi kurumsal işletmelerin ERP sisteminin sağlıklı işlemesini garanti altına alan stratejik bir bileşendir. Doğru şekilde yapılandırıldığında, sistem modülü işletmeye güvenli, ölçeklenebilir ve kontrol edilebilir bir dijital zemin sunar.
+
+2.5 Proje Ekibinin Tanıtımı 
+•	Proje Lideri (ERP Firması): Tolga Demir– 5 yıllık ERP deneyimi, AVAKOZA uzmanı
+•	Teknik Uzman (ERP Firması): Volkan Demirel– Sistem güvenliği ve veritabanı yönetimi uzmanı
+•	İşletme Sorumlusu (YBS SU): Ahmet Yılmaz – Bilgi işlem sorumlusu
+•	Uyarlama Danışmanı : [Yasin Yayın] – Öğrenci, uyarlama sürecinde analiz ve test sürecine katkı sağladı
+•	Uyarlama Danışmanı : [Atahan Sakman] – Öğrenci, uyarlama sürecinde analiz ve test sürecine katkı sağladı
+
+2.6 Temel ve Alt Amaçlar 
+Bu projenin temel amacı, YBS SU işletmesinde AVAKOZA ERP sistemine entegre edilecek Sistem Yönetimi Modülü ile, sistemin güvenli, sürdürülebilir, merkezi olarak yönetilebilir ve ölçeklenebilir bir yapıya kavuşturulmasını sağlamaktır.
+Projenin başarısı, işletme genelinde bilgiye erişim kontrolünün sağlanması, sistemin bütünlüğünün korunması ve teknik altyapının performanslı bir şekilde yönetilmesine bağlıdır.
+Alt Amaçlar:
+•	Tüm kullanıcıların rollerine uygun erişim yetkilerinin tanımlanması,
+•	Sistem yedekleme ve geri yükleme mekanizmalarının etkinleştirilmesi,
+•	Log kayıtlarının güvenli ve okunabilir şekilde tutulması,
+•	Sistem performansının düzenli olarak izlenmesi ve raporlanması,
+•	Kritik güvenlik açıklarının tespiti ve giderilmesi için yapıların kurulması,
+•	ERP sistemi üzerinde yapılacak teknik değişikliklerin merkezi olarak yönetilmesi.
+Bu amaçlar, proje lideri, üst yönetim ve sistem modülü proje ekibi tarafından ortak şekilde belirlenmiş olup, işletme içi bilgi güvenliği politikalarına uygun şekilde yapılandırılmıştır.
+2.7 Proje Planı 
+Hafta	Sistem Modülü Faaliyeti	Açıklama
+1. Hafta	Sistem Modülü Proje Başlatma	Sistem sorumluları belirlenir, ihtiyaç listesi çıkarılır. AVAKOZA ERP sistem gereksinimleri gözden geçirilir.
+2. Hafta	Mevcut Altyapı Analizi	YBS Su’nun sunucuları, ağ yapısı ve cihazları incelenir. Gerekli donanım/yazılım eksikleri belirlenir.
+3. Hafta	Sistem Mimarisinin Planlanması	AVAKOZA ERP'nin sunucu, istemci ve ağ mimarisi oluşturulur. Bulut veya yerel kurulum kararı verilir.
+4. Hafta	Sunucu Kurulumu ve Sistem Entegrasyonu	AVAKOZA ERP sunucusu kurulur (gerçek ya da simüle ortamda), temel bağlantılar test edilir.
+5. Hafta	Kullanıcı Rolleri ve Yetkileri Tanımlama	Departman bazlı kullanıcı profilleri oluşturulur (örneğin; depo, satış, finans, yöneticiler).
+6. Hafta	Erişim Kontrolleri ve Güvenlik Ayarları	Giriş yetkileri, parola politikaları, oturum süreleri ve veri erişim düzeyleri tanımlanır.
+7. Hafta	Yedekleme ve Geri Yükleme Sistemlerinin Ayarlanması	Sistem verilerinin günlük/haftalık yedekleme planı oluşturulur, test yedekleri alınır.
+8. Hafta	Sistem Performans Testleri	Sunucu ve istemci tepkime süreleri test edilir, darboğazlar belirlenir.
+9. Hafta	Güvenlik Testleri	Yetkisiz erişim simülasyonu, parola saldırı testleri vb. uygulanır. Güvenlik açıkları raporlanır.
+10. Hafta	Log ve İzleme Sistemlerinin Kurulumu	Kullanıcı hareketlerinin izlenmesi için sistem logları ayarlanır. Olay kayıtları yapılandırılır.
+11. Hafta	Güncelleme ve Yama Yönetimi	ERP sisteminin sürümleri kontrol edilir, test ortamında güncellemeler denenir.
+12. Hafta	Son Kullanıcı Sistem Erişimi Testi	Tüm kullanıcılar sistemde tanımlanır, erişim senaryoları test edilir.
+13. Hafta	Canlıya Geçiş Hazırlığı	Sistem ortamı dondurulur, yedek alınır. Sistem modülü açısından risk planı hazırlanır.
+14. Hafta	Canlıya Geçiş ve İzleme	Sistem ortamı devreye alınır. Loglar, sistem yükü ve güvenlik izlenir. Teknik destek hazır tutulur.
+
+
+
+2.8 Analiz Çalışmaları
+ERP sisteminin başarıyla hayata geçirilebilmesi için kapsamlı bir analiz süreci gereklidir. YBS Su firmasına AVAKOZA ERP’nin uyarlanmasında sistem modülüne özel olarak yürütülen analiz çalışmaları; altyapı yeterliliği, kullanıcı profilleri, güvenlik ihtiyaçları, sistem performans beklentileri ve entegrasyon gereksinimleri başlıkları altında toplanmıştır. Bu bölümde, sistem modülü özelinde gerçekleştirilen analiz çalışmaları ayrıntılı şekilde ele alınmaktadır.
+
+2.8.1 Altyapı Analizi
+İlk olarak, YBS Su firmasının mevcut bilgi teknolojileri altyapısı değerlendirilmiştir. Sunucu donanımı, istemci bilgisayarlar, ağ altyapısı, internet bant genişliği ve güvenlik duvarı yapılandırmaları analiz edilmiştir. YBS Su, yerel veri merkezi bulunan bir işletme olduğundan, AVAKOZA ERP'nin şirket içi (on-premise) kurulumu tercih edilmiştir. Bununla birlikte, sunucu kaynaklarının sınırlı olması nedeniyle orta düzeyde bir ölçeklendirme yapılması önerilmiştir. Kurulumun sağlıklı yapılabilmesi için minimum sistem gereksinimleri aşağıdaki gibi belirlenmiştir:
+•	Sunucu RAM: En az 16 GB
+•	İşlemci: 8 çekirdekli, 3.0 GHz üstü
+•	Ağ bağlantısı: Gigabit Ethernet
+•	Depolama: RAID 1 yapılandırmalı SSD diskler (500 GB ve üzeri)
+2.8.2 Kullanıcı Rol Analizi
+YBS Su’nun kurumsal yapısı incelenerek kullanıcı rollerine ilişkin analiz yapılmıştır. Bu analiz sonucunda sistemde farklı yetki seviyelerine sahip kullanıcı profilleri oluşturulması gerekmiştir. Örneğin, depo çalışanlarının yalnızca stok giriş-çıkışlarına erişim yetkisi olması gerekirken, muhasebe personelinin fatura ve ödeme işlemlerine, yöneticilerin ise tüm raporlara erişim yetkisi olması beklenmektedir. Belirlenen temel kullanıcı rolleri şunlardır:
+•	Depo Operatörü
+•	Satış Temsilcisi
+•	Muhasebe Personeli
+•	Çağrı Merkezi Yetkilisi
+•	Sistem Yöneticisi (Admin)
+•	Genel Müdürlük Raporlama Yetkilisi
+Her bir kullanıcı tipi için yetki matrisi oluşturulmuş ve sistem içi erişim sınırlandırmaları tasarlanmıştır.
+
+2.8.3 Güvenlik Analizi
+Sistem modülünün en kritik sorumluluk alanlarından biri olan güvenlik analizinde; veri gizliliği, erişim güvenliği ve ağ trafiği güvenliği konuları öncelikli olarak ele alınmıştır. Kullanıcı girişlerinde güçlü parola algoritmaları uygulanması, belirli oturum sürelerinde otomatik çıkışlar, şüpheli oturum girişlerinin loglanması gibi temel güvenlik önlemleri sisteme entegre edilmiştir. Ayrıca, yetkisiz erişimleri engellemek adına iki faktörlü kimlik doğrulama seçeneği de değerlendirilmiştir.
+2.8.4 Performans Analizi
+Sistemin kullanıcı yoğunluğuna göre nasıl tepki vereceğini anlayabilmek amacıyla temel bir performans analizi gerçekleştirilmiştir. Özellikle ay sonlarında yoğunlaşan faturalama işlemleri ve depo hareketlerinin sisteme etkisi simüle edilmiştir. Sonuç olarak, aynı anda 25 aktif kullanıcının sisteme giriş yaptığı senaryolarda sistemde %80 işlem kapasitesine ulaşıldığı gözlemlenmiştir. Bu nedenle, veri tabanı sorgu süreleri optimize edilmiş ve sık kullanılan raporlar önbelleğe alınacak şekilde ayarlanmıştır.
+2.8.5 Entegrasyon İhtiyaçları Analizi
+YBS Su firması hâlihazırda bazı işlemlerini MS Excel ve çevrimdışı depo yazılımlarıyla sürdürmektedir. Bu nedenle, AVAKOZA ERP’nin bu sistemlerle veri alışverişini yapabilmesi kritik öneme sahiptir. Stok yönetimi, muhasebe ve çağrı merkezi yazılımları ile yapılacak entegrasyonlar için API yapısı analiz edilmiş ve veri formatları eşleştirilmiştir. AVAKOZA ERP’nin sağladığı JSON tabanlı REST API'ler sayesinde bu entegrasyonların mümkün olacağı sonucuna varılmıştır.
+Bu analiz çalışmaları sonucunda, AVAKOZA ERP sistem modülünün YBS Su'nun mevcut yapısına uygun olarak yapılandırılabileceği belirlenmiştir. Tespit edilen eksikliklerin giderilmesi ve önerilen teknik iyileştirmelerin uygulanması ile sistemin sorunsuz şekilde çalışması beklenmektedir.
+
+2.8.a. Analiz Soruları 
+Genel Sorular 
+1.	Sistemin mevcut altyapısı nelerdir?
+2.	Mevcut sistemlerde hangi modüller aktif olarak kullanılmaktadır?
+3.	Sistem modülü için kurum içi hangi birimlerle entegrasyon gereklidir?
+4.	Yetkilendirme süreçleri kurum içinde nasıl yürütülmektedir?
+5.	Mevcut sistemde kullanıcı hesap yönetimi nasıl yapılmaktadır?
+6.	Sistem arızalarında nasıl müdahale edilmektedir?
+7.	Güvenlik duvarı ve antivirüs yazılımları yeterli midir?
+8.	ERP sistemi için sistem kaynakları (RAM, CPU, disk alanı vb.) yeterli midir?
+9.	Sistem kullanıcılarının eğitim düzeyi nedir?
+10.	Yedekleme süreçleri ne sıklıkla ve hangi yöntemle yapılmaktadır?
+Detay Sorular
+1.	Kullanıcı oluşturma ve yetkilendirme süreci nasıl çalışmaktadır?
+2.	Kullanıcı rolleri neye göre belirlenmektedir?
+3.	Aktif olmayan kullanıcı hesapları nasıl yönetilmektedir?
+4.	Parola politikası mevcut mudur ve yeterli midir?
+5.	Sistem içi log kayıtları ne kadar süre saklanmaktadır?
+6.	Yetkisiz erişim tespiti nasıl yapılmaktadır?
+7.	Uzak erişim güvenliği nasıl sağlanmaktadır?
+8.	Veri tabanı erişimleri nasıl denetlenmektedir?
+9.	Yedekleme işlemleri manuel mi otomatik mi yapılmaktadır?
+10.	Hangi yedekleme türü kullanılmaktadır? (tam, artımlı vb.)
+11.	Kritik sistem bileşenleri için uptime hedefi nedir?
+12.	Sunucu güncellemeleri nasıl yönetilmektedir?
+13.	Sistem kullanıcılarına eğitim veriliyor mu?
+14.	ERP sistemine kaç kullanıcı eşzamanlı giriş yapabiliyor?
+15.	Kullanıcı oturum süreleri sınırlı mı?
+16.	Hangi kullanıcılar sistem ayarlarını değiştirebilir?
+17.	Şifre sıfırlama prosedürü nasıl işlemektedir?
+18.	Erişim denetimi için hangi araçlar kullanılıyor?
+19.	Hangi işletim sistemleri destekleniyor?
+20.	Mobil cihazlardan sisteme giriş mümkün mü?
+21.	Sistem yöneticileri için denetim mekanizmaları var mı?
+22.	Felaket kurtarma planı mevcut mu?
+23.	Donanım kaynak kullanımı izleniyor mu?
+24.	ERP sisteminde oluşan hatalar nasıl raporlanıyor?
+25.	Kullanıcı aktiviteleri nasıl kaydediliyor?
+26.	Yeni sistem güncellemeleri nasıl test ediliyor?
+27.	Her kullanıcı için sistemde ne tür kısıtlamalar uygulanıyor?
+28.	Güvenlik açıkları tespiti ne sıklıkla yapılıyor?
+29.	Sistem bakım saatleri nasıl duyuruluyor?
+30.	Hangi durumlarda sistem kapatılıyor ya da yeniden başlatılıyor?
+ Gelecek Odaklı Sorular
+1.	ERP sistemine yapay zekâ desteği entegre edilmesi planlanıyor mu?
+2.	Gelecekte sistem bulut altyapısına geçirilecek mi?
+3.	Kullanıcı kimlik doğrulama için biyometrik sistemler düşünülüyor mu?
+4.	Sisteme entegre edilecek yeni güvenlik modülleri var mı?
+5.	Gelecekte IoT cihazlarından veri alımı planlanıyor mu?
+6.	Sistem modülü için dış sistemlerle API entegrasyonu hedefleniyor mu?
+7.	Gelecekte kullanıcı erişim analizleri yapılacak mı?
+8.	Otomatik sistem denetimi için yeni yazılımlar planlanıyor mu?
+9.	Veri analitiği entegrasyonu sistem modülü üzerinden yapılacak mı?
+10.	Yapay zekâ ile sistem yönetimi otomasyonu planlanıyor mu?
+2.8.b. Analiz Toplantıları 
+Analiz toplantıları, sistem modülünün kuruma uyarlanma sürecinde en kritik adımlardan biridir. Bu toplantılar sayesinde hem kullanıcı ihtiyaçları hem de mevcut sistemin güçlü ve zayıf yönleri ortaya konur. Sistem modülü kapsamında yapılan analiz toplantılarının amacı; kullanıcı yönetimi, yetkilendirme, sistem güvenliği, yedekleme ve loglama gibi süreçlerin nasıl işlemesi gerektiğine dair kapsamlı bilgi toplamaktır.
+Toplantılar, aşağıdaki prensiplere uygun şekilde gerçekleştirilmiştir:
+•	Katılımcılar: Analiz toplantılarına ERP yazılım firması danışmanları, kurumun BT departmanı temsilcileri, sistem yöneticileri ve süper kullanıcılar katılmıştır. Gerektiğinde üst yönetimden temsilciler de bilgilendirme amaçlı davet edilmiştir.
+•	Yöntem: Her toplantı öncesinde gündem maddeleri belirlenmiş, katılımcılara önceden bilgilendirme yapılmıştır. Toplantılar hem yüz yüze hem de çevrim içi ortamda gerçekleştirilmiş, tüm toplantıların tutanakları alınmıştır.
+•	Toplantı Aralıkları: Toplamda 4 ana analiz toplantısı yapılmıştır. Bu toplantılar haftalık periyotlarla gerçekleştirilmiş, gerektiğinde ara değerlendirme toplantıları da yapılmıştır.
+•	İçerik: İlk toplantıda mevcut kullanıcı yönetimi süreçleri gözden geçirilmiş, ikinci toplantıda yetki matrisleri oluşturulmuş, üçüncü toplantıda sistem güvenliği politikaları değerlendirilmiş ve dördüncü toplantıda yedekleme, loglama ve sistem bakım prosedürleri ele alınmıştır.
+•	Sonuçlar: Her toplantı sonunda eylem planları hazırlanmış, sorumlu kişiler belirlenmiş ve elde edilen bilgiler sistem modülünün analiz dökümanına işlenmiştir.
+Toplantılar sayesinde, sistem modülünün işletme yapısına uygun, sürdürülebilir ve güvenli bir şekilde uyarlanması için gerekli tüm analizler başarıyla gerçekleştirilmiştir.
+2.8.c İş Süreçleri Analizi
+ERP sistemlerinin başarıyla uygulanabilmesi için işletmenin mevcut iş süreçlerinin ayrıntılı biçimde analiz edilmesi kritik öneme sahiptir. YBS Su firmasında yürütülen iş süreçleri, sistem modülü açısından değerlendirildiğinde; kullanıcı yönetimi, yetkilendirme, işlem güvenliği, veri erişim kontrolü ve sistem yönetimi süreçleri ön plana çıkmaktadır. Bu süreçlerin doğru biçimde tanımlanması, sistemin işleyişini doğrudan etkileyecek unsurları optimize etmeye yardımcı olur.
+2.8.c1 Mevcut Süreçlerin Tespiti
+İlk aşamada, YBS Su’da halihazırda kullanılan sistemler ve işleyişler gözlemlenmiştir. Kullanıcılar farklı sistemlere manuel giriş yapmakta, kullanıcı hesaplarının takibi Excel gibi araçlarla yürütülmekte ve sistemde merkezi bir oturum denetimi bulunmamaktadır. Bu da veri tutarsızlıkları, yetkisiz erişimler ve izlenemeyen müdahaleler gibi riskleri beraberinde getirmektedir.
+2.8.c2 Sistem Modülü Açısından Kritik Süreçler
+a) Kullanıcı Hesap Yönetimi:  
+Kurum çalışanlarının sisteme tanımlanması, görev değişikliklerinde yetki güncellemelerinin yapılması ve işten ayrılan personelin erişimlerinin anında kaldırılması süreci analiz edilmiştir. Bu süreçte manuel hatalar ciddi riskler oluşturduğundan, otomatik kullanıcı yaşam döngüsü (user lifecycle) senaryoları tasarlanmıştır.
+b) Yetki ve Rol Dağılım Süreci:
+Kullanıcılara atanan rollerin departman bazlı olarak sınıflandırılması ve bu rollerin sistem üzerindeki etkilerinin belirlenmesi yapılmıştır. Örneğin, satış personelinin yalnızca fatura giriş ekranlarına erişebilmesi, stok düzeltme işlemlerine müdahale edememesi gibi durumlar detaylandırılmıştır.
+c) Sistem Erişim ve Giriş Süreci:
+Sisteme giriş yapan kullanıcıların, IP adresi, saat, cihaz ve tarayıcı bilgilerinin kayıt altına alınarak, güvenlik politikalarıyla uyumlu bir yapı oluşturulması hedeflenmiştir. Ayrıca belirli kullanıcıların sadece firma içi ağdan erişimine izin verilmesi gibi kurallar tanımlanmıştır.
+d) Güncelleme ve Yedekleme Süreçleri:
+Sistem modülünün kontrol ettiği arka plan işlemleri (günlük yedekleme, sistem saat senkronizasyonu, yazılım güncellemeleri) analiz edilerek bu süreçlerin otomatikleştirilmesi planlanmıştır. Her işlem sonrası sistem yöneticilerine rapor gönderilmesi kararı alınmıştır.
+2.8.c3 Süreç İyileştirme Önerileri
+Yapılan analiz sonucunda YBS Su’nun iş süreçlerinde aşağıdaki iyileştirme alanları tespit edilmiştir:
+•	Yetkisiz	Erişimin Önlenmesi:
+İşten ayrılan veya departman değiştiren personelin yetkilerinin zamanında güncellenmemesi ciddi bir güvenlik açığıdır. Bu nedenle sistem modülü ile entegre çalışan bir “otomatik yetki güncelleme iş akışı” önerilmiştir.
+•	Merkezi Kullanıcı Yönetimi: Tüm kullanıcıların tek bir sistem üzerinden yönetilmesi, hem zaman hem kaynak tasarrufu sağlamaktadır. 
+•	İzlenebilirlik ve Raporlama:
+Kim, hangi veriye, ne zaman erişti? Bu sorulara otomatik raporlamalarla yanıt verilmesi hedeflenmiştir. Sistem loglarının okunabilir raporlar halinde yöneticilere sunulması bu kapsamda önerilmiştir.
+2.8.c.4 Geleceğe Yönelik Süreç Kurgusu
+YBS Su için uzun vadede sistem modülünün sadece iç sistemlere değil, IoT destekli sayaç sistemleri veya mobil saha ekipleri gibi dış birimlere de erişimi kontrol edecek şekilde genişletilmesi planlanmaktadır. Bu nedenle geliştirilebilir ve esnek bir iş süreci modeli tasarlanmış, sistem modülüne API ile erişim yetkileri tanımlanabilir hale getirilmiştir.
+2.8.c.i Ana İş Akış Diyagramı 
+ 
+Görsel 2.1 Ana İş Akış Diyagramı
+2.8.c.ii. Ana Veri Akış Diyagramı 
+ 
+Görsel 2.2 Ana Veri Akış Diyagramı
+defUsr Ek1. – defUserAppAndRole Ek2. – defRol Ek3. – defRolMnu Ek4. - 
+2.8.c.iii. Anahtar Performans Göstergeleri
+1.	Kullanıcı ekleme süresi: Yeni bir kullanıcının sisteme tanımlanmasının ortalama süresi.
+2.	Yedekleme süresi: Sistemin tüm verilerinin yedeklenmesinin ne kadar sürede tamamlandığı.
+3.	Veri kurtarma başarısı: Bir veri kaybı durumunda, verilerin başarılı şekilde geri getirilebilme oranı.
+4.	Günlük sistem hatası sayısı: Günlük olarak sistemde oluşan hata sayılarının takibi.
+5.	Yetki ihlali bildirimi: Yetkisi olmayan kullanıcıların erişim girişimlerinin tespit edilme sayısı.
+6.	Log kayıtlarının okunabilirliği: Logların sistem yöneticisi tarafından anlaşılır ve yorumlanabilir düzeyde olması.
+7.	Rol güncelleme süresi: Bir kullanıcının yetki/rol değişikliğinin sisteme yansıtılma süresi.
+8.	Eğitim sonrası kullanıcı hatası: Sistem eğitimi sonrası kullanıcıların yaptığı hata sayılarının izlenmesi.
+9.	Sistem kapanma süresi: Planlı ya da plansız bir kapanma anında sistemin durması için geçen süre.
+10.	Güvenlik alarm yanıt süresi: Sistem tarafından algılanan bir güvenlik tehdidine verilen ortalama müdahale süresi.
+
+
+2.8.c.iv Detay İş Akış Diyagramı 
+ 
+Görsel 2.3 Detay İş Akış Diyagramı
+
+2.8.c.v. Detay Veri Akış Diyagramı 
+
+ 
+Görsel 2.4 Detay Veri Akış Diyagramı
+
+2.8.d. Modülün İş Süreçleri ile Yazılım İş Süreçlerinin Karşılaştırılması
+1. Geleneksel İş Süreci (Manuel Yürütülen Süreçler)
+Sistem yönetimi modülünün manuel işleyişinde birçok işlem kurum içi yazışmalar, formlar, birebir iletişim ve fiziksel müdahaleler yoluyla yürütülmektedir. Yeni bir çalışanın sisteme tanımlanması süreci şu adımlarla gerçekleşir:
+•	Çalışan bilgileri, insan kaynakları tarafından kağıt form ya da e-posta yoluyla sistem yöneticisine iletilir.
+•	Sistem yöneticisi, kullanıcı bilgilerini manuel olarak kayıt altına alır.
+•	Erişim yetkileri, yöneticilerden gelen e-posta veya sözlü bildirimlere göre ayrı ayrı tanımlanır.
+•	Rol ve menü erişimleri kullanıcıdan gelen talepler doğrultusunda zaman içinde güncellenir.
+•	Donanım ve BT erişimi, ayrıca BT birimiyle koordine edilerek sağlanır.
+•	Güvenlik kontrolleri ve parola politikaları ayrı prosedürlerle kontrol edilir.
+•	Müdür onayı çoğu zaman kağıt imza ya da e-posta yazışması yoluyla alınır.
+•	Sürecin herhangi bir adımında yaşanan aksaklık ya da bilgi eksikliği, süreç bütününü sekteye uğratabilir.
+Bu yapı, zamana yayılmış, insan hatasına açık ve kurum içi bağımlılıkların fazla olduğu bir süreci ifade eder.
+
+2. Yazılım (ERP) Süreci ile Yürütülen Sistem Yönetimi
+ERP tabanlı sistem yönetimi modülü sayesinde yukarıda sıralanan işlemler entegre ve standart hale getirilmiştir. Süreç otomatikleşmiş, departmanlar arası bağımlılıklar minimize edilmiştir. ERP üzerinden yürütülen iş akışında:
+•	İnsan kaynakları birimi çalışanın bilgilerini sisteme girer, sistem otomatik olarak pozisyon, departman ve statüsüne göre ilgili parametreleri belirler.
+•	Kullanıcı hesabı sistem yöneticisi tarafından tek tıklamayla oluşturulur.
+•	Yetki ve rol atamaları, kullanıcı tipi baz alınarak ERP şablonları üzerinden otomatik tanımlanır.
+•	Menü erişim profilleri daha önceden belirlenen paketlere göre doğrudan uygulanır.
+•	Donanım ve sistem erişim talepleri, ERP üzerinden BT birimine yönlendirilir.
+•	Güvenlik politikaları ve parola kuralları merkezi olarak sistem tarafından denetlenir ve zorunlu kılınır.
+•	Müdür onayı, dijital iş akışı üzerinden alınır ve işlem geçmişine kayıt edilir.
+•	Süreç boyunca yapılan her işlem log dosyalarına kaydedilir ve denetlenebilirlik sağlanır.
+Bu yapı sayesinde işlemler hem daha hızlı hem de standartlara uygun biçimde tamamlanır.
+
+3. Karşılaştırmalı Tablo
+Kriter	Manuel Süreç	ERP ile Süreç
+Başvuru ve Bilgi Girişi	 Form, e-posta, sözlü iletişim	 ERP formu üzerinden merkezi veri girişi
+Hesap Oluşturma	 Sistem yöneticisi elle giriş yapar	 ERP sistemi üzerinden tek tıkla otomatik oluşturma
+Yetki ve Rol Ataması	 Elle tanımlama, belirsiz şablonlar	 Kullanıcı türüne göre otomatik şablon atama
+Menü Erişimi Tanımı	 Kullanıcının isteğine göre manuel yapılır	 Hazır profil setleri ile otomatik erişim tanımı
+BT ile Koordinasyon	 E-posta, fiziksel yazışmalar	 ERP içi otomatik bildirim ve talep yönetimi
+Güvenlik Politikası	 Harici prosedürlerle kontrol edilir	 ERP içinde merkezi kontrol ve uyum takibi
+Onay Mekanizması	 Müdürden yazılı ya da sözlü onay alınır	 Dijital iş akışı içinde ERP üzerinden yönetsel onay
+İzlenebilirlik ve Kayıt	 Kağıt form veya bireysel dosyalarda tutulur	 Log dosyaları ve ERP içi işlem geçmişi ile tam izlenebilirlik
+Zaman ve Verimlilik
+	 Günler sürebilir, insan hatası yüksektir	 Dakikalar içinde tamamlanabilir, standart ve kontrollüdür
+
+
+2.9 Senaryo Çalışması
+DUYBS Su Fabrikası, artan bayi ve zincir mağaza siparişleri nedeniyle Sipariş ve Müşteri Yönetimi departmanına destek olacak yeni bir personel alımına gitmiştir. Yapılan değerlendirmeler sonucunda Ahmet Yılmaz, “Sipariş Takip Sorumlusu” unvanıyla göreve başlamıştır. Ahmet’in göreve başlatılması ve ERP sistemine tanımlanması işlemleri, Sistem Yönetimi Modülü üzerinden gerçekleştirilmiştir.
+1.	Başvuru ve Personel Kayıt Süreci: 
+İnsan Kaynakları Departmanı, Ahmet Yılmaz’ın işe alım sürecini tamamladıktan sonra, ERP sisteminde yeni personel kaydını oluşturur. Kimlik bilgileri, pozisyonu (Sipariş Takip Sorumlusu) ve bağlı olduğu birim ERP’ye girilir. ERP sistemi, pozisyona uygun olarak Ahmet’i “Ofis Personeli” kategorisine dahil eder ve temel kullanıcı haklarını atar.
+2.	Kullanıcı Hesabının Oluşturulması:
+Sistem yöneticisi, sistem yönetimi modülünden “Yeni Kullanıcı” işlemini başlatarak Ahmet için kullanıcı adı ve geçici şifre tanımlar. ERP hesabı aktif duruma getirilir ve "siparis_ayilmaz" kullanıcı adı oluşturulur.
+3.	Yetki ve Menü Erişimi Tanımları:
+Ahmet’in pozisyonuna uygun olarak sadece Sipariş Giriş, Sipariş Onay, Müşteri Bilgi Güncelleme, Stok Görüntüleme ve Raporlama ekranlarına erişim yetkisi tanımlanır. Sistem yöneticisi, bu işlemleri “Sipariş Modülü Ofis Yetkisi” isimli hazır profili kullanarak birkaç adımda tamamlar.
+4.	Donanım ve BT Süreci:
+ERP sistemi, BT birimine otomatik olarak bilgilendirme gönderir. BT personeli, Ahmet’e özel masaüstü bilgisayarı yapılandırır, ERP sistemine erişim sağlayacak ağ izinlerini oluşturur ve kurumsal e-posta adresini aktive eder. Bu işlemlerin tümü ERP log sistemine kaydedilir.
+5.	Güvenlik Uyumu ve Kullanıcı Politikaları:
+Sistem, DUYBS Su Fabrikası’nın bilgi güvenliği politikaları doğrultusunda, Ahmet’ten ilk oturumda karmaşık bir parola belirlemesini ister. Ayrıca, “Kullanıcı Erişim Protokolü” elektronik olarak sunulur ve Ahmet’in onayı alınır. Sistem bu onayı kullanıcı kayıtlarına işler.
+6.	Yönetsel Onay Süreci:
+Sipariş Müdürü, ERP sisteminden gelen kullanıcı oluşturma bildirimini inceler. Kullanıcının pozisyonu, erişim düzeyi ve rol tanımı onaylanır. Onay süreci sistem üzerinden gerçekleştirilir ve ERP log kayıtlarına otomatik olarak işlenir.
+7.	Bilgilendirme ve Göreve Başlangıç:
+Onay sonrası, sistem Ahmet’e kullanıcı adı, bağlantı linki ve ilk giriş yönergelerini içeren bir bilgilendirme e-postası gönderir. Ahmet, sisteme giriş yaptıktan sonra yetkilendirildiği ekranlara erişebilir ve sipariş yönetim süreçlerinde aktif rol almaya başlar.
+
+
+
+2.10. Sisteme Girilecek Verilerin Belirlenmesi
+1. Kullanıcı Bilgileri
+•	Adı ve Soyadı: Cemil Cemiloğlu
+•	T.C. Kimlik No
+•	Cinsiyet
+•	Doğum Tarihi
+•	İletişim Bilgileri (telefon, e-posta)
+•	Çalışmaya Başlama Tarihi
+2. Pozisyon ve Departman Bilgileri
+•	Ünvan: Sipariş Takip Sorumlusu
+•	Departman: Sipariş ve Müşteri Yönetimi
+•	Birim: Satış Ofisi
+•	Bağlı Müdür: Sipariş Müdürü
+•	Personel Statüsü: Ofis personeli (tam zamanlı)
+3. Kullanıcı Hesap Bilgileri
+•	Kullanıcı Adı (örnek: siparis_ccemiloglu)
+•	Geçici Şifre
+•	Hesap Durumu: Aktif / Pasif
+•	Son Parola Değişim Tarihi
+4. Rol ve Yetki Bilgileri
+•	Rol Tipi: Ofis Kullanıcısı
+•	Yetki Profili: Sipariş Modülü Yetki Paketi
+•	Erişebileceği Modüller:
+o	Sipariş Giriş
+o	Sipariş Onay
+o	Müşteri Bilgi Güncelleme
+o	Stok Görüntüleme
+o	Raporlama
+5. BT Erişim ve Donanım Bilgileri
+•	Cihaz ID (verilen bilgisayarın sistemi)
+•	IP Adresi / MAC Adresi
+•	Ağ Grubu
+•	Kurumsal e-posta adresi
+•	ERP’ye giriş bağlantı türü (VPN / Yerel)
+6. Güvenlik ve Uyumluluk Verileri
+•	İlk Giriş Tarihi
+•	Güçlü Parola Onayı
+•	Kullanıcı Erişim Politikası Kabul Bilgisi
+•	İki Faktörlü Kimlik Doğrulama Durumu (varsa)
+
+2.11. Verilerin Nasıl Girileceğinin Belirlenmesi
+1. Kullanıcı Tanımlama (defUsr)
+•	Ekran: Kullanıcı Tanımlama ekranı kullanılarak sisteme yeni personel eklenir.
+•	Giriş yapılması gereken alanlar:
+o	Kullanıcı Kodu (örnek: AYILMAZ)
+o	Ad-Soyad (örnek: Ahmet Yılmaz)
+o	Doğum Tarihi
+o	Şifre (geçici olarak sistem yöneticisi girer)
+o	Alternatif ve Sorumlu Kullanıcı Kodları (isteğe bağlı)
+o	PC Eşleştirme (cihaza özel giriş kısıtı gerekiyorsa)
+o	Aktiflik durumu (kutucuk işaretlenir)
+2. Rol Tanımlama (defRol)
+Ekran Ek3.’de verilmiştir
+•	Rol tipi ve yetkileri belirlemek için Rol Tanımları ekranı kullanılır.
+•	Örnek Roller:
+o	AD1 / AD2: Admin yetkisi
+o	CR1 / CR2: Çırak
+o	KL1 / KL2: Kalfa
+o	SA: Sistem Yöneticisi
+•	Sipariş modülüne atanan yeni çalışan için uygun rol “CR1” ya da özel oluşturulmuş bir “Sipariş Sorumlusu” rolü olabilir.
+3. Kullanıcıya Uygulama ve Rol Atama (defUserAppAndRole)
+Ekran Ek2.’de verilmiştir
+•	Kullanıcılar belirli uygulamalara (modüllere) atanır.
+•	Örneğin: “wMH” uygulama adı, Muhasebe Yönetimi modülünü temsil eder. Sipariş modülü için benzer şekilde “DSY” gibi tanımlı bir alan seçilebilir.
+•	Gerekli veri alanları:
+o	Kullanıcı Kodu
+o	Veritabanı (örnek: KOZA_1)
+o	Rol Adı (örnek: CR1, AD2, vb.)
+o	Rol Açıklaması (örnek: Sipariş Giriş Yetkilisi)
+4. Yetkilendirme (defRolMnu)
+Ekran Ek4.’de verilmiştir
+•	Rol bazlı ekran erişim izinleri bu bölümden tanımlanır.
+•	Sol kısımdaki ağaç yapısı üzerinden ilgili ekranlar (örneğin: Sipariş Giriş, Sipariş Onay, Sipariş Raporları) işaretlenerek seçilir.
+•	“Tümünü Seç” veya “Tümünü Bırak” fonksiyonları, toplu işlem kolaylığı sağlar.
+•	Kullanıcıya atanmış rol, yalnızca yetkilendirilmiş ekranlara erişebilir.
+
+
+5. Sistem Parametreleri ve Güncellemeler
+Ekran Ek9.’da verilmiştir
+•	Sistem yöneticisi, Uygulama Tanımı ve Güncelleme Parametreleri ekranlarında kullanıcıya bağlı uygulama ve güncelleme sıklığını belirler.
+•	Giriş alanları:
+o	Güncelleme kontrol aralığı
+o	Sistem kapanma / açılma zamanları
+o	Parametre açıklamaları (örneğin: Sipariş ekranları güncellensin mi)
+2.12. Verilerin Diğer Modüllerle Uyumluluğu
+1. Üretim Yönetimi Modülü ile İlişki
+•	Üretim ekranlarına erişecek kullanıcıların tanımı sistem yönetimi üzerinden yapılır.
+•	Üretim personelinin sadece kendi görev alanına erişebilmesi için rol bazlı yetkilendirme sağlanır.
+•	Üretim emirleriyle ilgili işlem yapan kullanıcıların log kayıtları sistem yönetimi tarafından tutulur.
+2. Tedarikçi Yönetimi ile İlişki
+•	Tedarikçi verilerine erişimi olan personelin yetkileri sistem yönetimi tarafından tanımlanır.
+•	Kritik tedarikçi bilgilerine yalnızca belirli roller erişebilir; bu güvenlik yapısı sistem yönetimi modülünden kontrol edilir.
+3. Malzeme Yönetimi ile İlişki
+•	Stok ve malzeme hareketlerini yönetecek kullanıcıların sistem tanımları yapılır.
+•	ERP'de “stok girişi yapabilir” veya “sadece görüntüleyebilir” gibi detaylı yetkiler sistem yönetimiyle belirlenir.
+4. Muhasebe Modülü ile İlişki
+•	Muhasebe personelinin ERP içindeki işlem ekranlarına erişim izni, şifreleme güvenliği ve yetki seviyesi sistem yönetimi tarafından ayarlanır.
+•	Bu sayede hatalı kayıtların, yetkisiz müdahalelerin ve veri sızıntısının önüne geçilir.
+5. Satın Alma Modülü ile İlişki
+•	Tedarik taleplerini onaylayacak yöneticiler, sistem yönetimi modülünden kullanıcı olarak atanır.
+•	Erişim süreleri, ekran izinleri ve işlem kısıtlamaları sistem yöneticisi tarafından tanımlanır.
+6. Alış Sipariş ve Alış Faturalama ile İlişki
+•	Tüm alış kayıtlarının kimler tarafından girileceği, fatura bilgisine kimlerin erişebileceği sistem yönetimi tarafından kısıtlanabilir.
+•	Böylece sadece yetkili kişiler veri girişi yapabilir, kayıtlar denetlenebilir hale gelir.
+7. Nakit Yönetimi ile İlişki
+•	Kasa işlemlerini yapacak kullanıcılar sistem yönetimi üzerinden tanımlanır.
+•	Banka hesaplarına erişimi olan kullanıcıların erişim gün ve saatleri bile sistemsel olarak sınırlandırılabilir.
+•	Loglama sistemiyle kim, ne zaman, ne işlem yaptı takip edilir.
+
+2.13 Kullanıcı Eğitimlerinin Verilmesi
+1. Eğitim Planlaması ve Kapsam
+Eğitimler, personelin görev alanı, ERP bilgi seviyesi ve erişeceği modüller dikkate alınarak hazırlanır. Eğitim planı aşağıdaki başlıklar doğrultusunda şekillendirilir:
+•	Temel ERP kullanımı (arayüz, modül geçişi, temel fonksiyonlar)
+•	Rol bazlı yetkilerin ne anlama geldiği
+•	Erişim sınırları ve güvenlik kuralları
+•	Hangi kullanıcı, hangi ekranlara erişebilir?
+•	Sık yapılan işlemler ve örnek senaryolar
+•	Hatalı işlem yapıldığında ne yapılmalı?
+•	Log takibi ve denetlenebilirlik bilinci
+
+2. Eğitim Yöntemleri
+Kurumun ERP sistemine geçiş sürecinde ve personel değişimlerinde aşağıdaki yöntemlerle eğitimler düzenlenir:
+•	Yüz yüze eğitim oturumları: Yeni başlayan personele bire bir eğitim verilir. Sistem yöneticisi, kullanıcının yetkili olduğu ekranlar üzerinden canlı anlatım yapar.
+•	Uzaktan eğitim (online toplantılar): Merkez dışında çalışan personel için Microsoft Teams / Zoom üzerinden uzaktan bağlantı ile uygulamalı eğitimler düzenlenir.
+•	Video içerikler ve kullanım kılavuzları: Sık yapılan işlemler (sipariş girişi, stok kontrolü, rapor alma vb.) için kısa video eğitimleri hazırlanır.
+•	Ekran üstü rehberlik (tooltip): ERP sistemine girişte, bazı ekranlarda kullanıcıya adım adım yönlendirme yapan yardım kutucukları kullanılır.
+
+3. Eğitim Süresi ve Değerlendirme
+•	Temel eğitim süresi: 2 saat
+•	Modül bazlı uzmanlaşma eğitimi: 3 – 5 saat
+•	Eğitim sonunda kullanıcıdan bir işlem simülasyonu yapması istenir. (örneğin bir sipariş girişi, bir rapor alma, vb.)
+Eğitim başarıyla tamamlandıktan sonra sistem yöneticisi tarafından kullanıcıya erişim hakları aktif hale getirilir.
+
+4. Eğitim Takibi ve Sürekliliği
+•	Eğitim alan tüm kullanıcılar sistem yönetimi modülü içinde "Eğitim Almış Kullanıcılar" veri tabanına kaydedilir.
+•	Yeni modül eklemelerinde ya da sistem güncellemelerinde, ilgili kullanıcılar tekrar eğitime çağrılır.
+•	Kullanıcılar arası bilgi paylaşımı için ERP içi "Kılavuz ve Yardım Merkezi" ekranı aktif tutulur.
+
+
+2.14 Yazılımın Canlıya Geçiş Öncesi Son Aşamaları
+Canlıya geçiş süreci, bir ERP sisteminin sadece teknik olarak değil, operasyonel olarak da tam anlamıyla devreye alınacağı en kritik safhadır. Bu aşama, sistemin test ortamından çıkarılarak gerçek iş verileri ve kullanıcılar ile çalışmaya başlamasını ifade eder. Özellikle Sistem Yönetimi Modülü açısından canlıya geçiş; sadece teknik yapılandırmaların tamamlanması değil, aynı zamanda kurumsal güvenliğin, kullanıcı yönetiminin ve sistem denetiminin devreye alınması anlamına gelir.
+Bu süreçte, kullanıcı tanımları eksiksiz şekilde yapılmalı, yetkilendirme yapısı netleştirilmeli, erişim kontrol mekanizmaları ve log izleme sistemleri aktif hale getirilmelidir. Ayrıca sistemin güvenli, hızlı ve sürdürülebilir bir şekilde çalışabilmesi için ön testlerin tekrar edilmesi, acil durumlar için yedekleme ve geri dönüş planlarının hazır olması gerekir. Tüm bu adımlar, canlıya geçiş sürecinin yalnızca bir teknik geçiş değil, aynı zamanda kurumsal operasyonel bir sorumluluk olduğunu da göstermektedir.
+2.14.a Sistemin Çalıştırılması Aşamalarının Planlanması
+1. Kullanıcıların Son Kontrolleri
+•	Tüm kullanıcı tanımları sistem yöneticisi tarafından bir liste halinde gözden geçirilmiştir.
+•	Hatalı açılmış, eksik bilgi içeren veya pasif durumda kalan kullanıcı hesapları tespit edilerek güncellenmiştir.
+•	Her kullanıcıya atanmış roller, ekran erişimleri ve işlem yetkileri kontrol edilmiştir.
+2. Yetki ve Güvenlik Kurgusunun Onaylanması
+•	Rol bazlı erişim yapısı, müdür onaylarına sunulmuş ve gerekli revizeler yapılmıştır.
+•	Kritik işlemler (stok düzeltme, muhasebe fişi girme, fatura silme vb.) yalnızca üst düzey yetkililere verilmiştir.
+•	Tüm kullanıcı şifreleri sistem tarafından yeniden oluşturularak ilk girişte değişiklik zorunluluğu tanımlanmıştır.
+3. Loglama ve İzleme Yapılarının Aktifleştirilmesi
+•	ERP sistemi üzerinde yapılan tüm işlemlerin loglanması aktif hale getirilmiştir.
+4. Uygulama Güncellemeleri ve Versiyon Kontrolü
+•	ERP sisteminin yüklü olduğu istemcilerde son sürüm kontrolü yapılmıştır.
+•	Gerekli güncellemeler tamamlandıktan sonra merkezi sunucudan sistem yeniden başlatılmıştır.
+
+2.14.b. Verilerin Girilmesi
+1. Kullanıcı Tanımlama (defUsr ekranı üzerinden)
+•	Yeni kullanıcılar sistemin defUsr ekranı kullanılarak tanımlanmıştır.
+•	Gerekli alanlar:
+o	Kullanıcı Kodu: örn. AYILMAZ
+o	Ad Soyad: Ahmet Yılmaz
+o	Şifre: 
+o	Kullanıcı Tipi: Admin
+o	Durum: Aktif
+o	Sorumlu Kullanıcı ve Alternatif Kullanıcı bilgileri gerektiğinde atanmıştır.
+
+2. Uygulama Atama 
+•	Her kullanıcıya, sadece yetkili olduğu uygulama modülleri atanmıştır.
+•	Örneğin: Sipariş modülünde çalışan bir personele siparisYonetim, stokGoruntuleme gibi modüller tanımlanmıştır.
+•	Bu atama sırasında aynı kullanıcıya muhasebe veya yönetici modülleri atanmayarak veri güvenliği korunmuştur.
+
+3. Rol Atama (defRole ve defUserRole ekranları)
+•	Kullanıcılara görevlerine uygun roller atanmıştır.
+•	defUserRole ekranı üzerinden rol kullanıcıya iliştirilmiştir.
+•	Rol açıklamaları açık ve standartlara uygun olacak şekilde yazılmıştır (örneğin: “Sipariş Girişi Yetkilisi”).
+
+
+4. Menü ve Ekran Yetkilendirme (defRolMnu ekranı üzerinden)
+•	Her role ait ekran yetkileri defRolMnu ekranı üzerinden belirlenmiştir.
+•	Kullanıcının rolüne göre erişebileceği tüm ekranlar tek tek işaretlenmiştir.
+o	Örn: Sipariş Giriş, Sipariş Onay, Rapor Al
+•	Güvenlik gereği kritik ekranlar (örneğin: faturaSil, yetkiDegistir) erişim dışında bırakılmıştır.
+•	“Tümünü Seç / Bırak” komutları kontrollü şekilde kullanılmış, gereksiz yetkiler kaldırılmıştır.
+
+5. Cihaz ve Erişim Bilgileri
+•	AVAKOZA ERP’nin sunduğu PC eşleştirme özelliğiyle, kullanıcıların sadece tanımlı cihazlardan sisteme erişebilmesi sağlanmıştır.
+•	IP adresi eşleştirmeleri yapılarak ofis dışından yetkisiz girişler engellenmiştir.
+•	Kullanıcıların giriş deneme sayısı sınırlandırılmış, 3 kez hatalı girişte kilitlenme sistemi devreye alınmıştır.
+
+6. Sistem Parametreleri
+•	Her kullanıcıya özel sistem parametreleri, ERP yöneticisi tarafından girilmiştir:
+o	İlk ekran yönlendirmesi (örneğin: Sipariş Paneli)
+o	Dil seçeneği: Türkçe
+o	Tarih biçimi: GG/AA/YYYY
+o	Giriş sonrası kullanıcı uyarı ekranları
+
+
+
+2.14.c. Testlerin Yapılması
+1. Test Ortamı ve Kullanıcı Giriş Denemeleri
+•	Gerçek verilerle birebir yapılandırılmış bir test veritabanı oluşturulmuştur.
+•	Tanımlanan tüm kullanıcılar, AVAKOZA ERP giriş ekranı üzerinden sisteme girerek test işlemlerine başlamıştır.
+•	Giriş testlerinde şunlar kontrol edilmiştir:
+o	Şifre kurallarının çalışıp çalışmadığı
+o	Tanımlı rollerin doğru şekilde yüklenip yüklenmediği
+o	Cihaz (PC) eşleştirmesi olan kullanıcıların sadece belirlenen bilgisayardan giriş yapabilmesi
+
+2. Uygulama ve Menü Yetkileri Testi (defAppAssign & defRolMnu)
+•	defAppAssign ekranı üzerinden kullanıcılara tanımlı uygulamaların sistem tarafından doğru şekilde yüklendiği test edilmiştir.
+•	Kullanıcılar yalnızca erişim izni verilmiş uygulamaları (örneğin: siparisYonetimi) görebilmiş; diğer modüller sistem tarafından erişim dışı bırakılmıştır.
+•	defRolMnu ekranı üzerinden belirlenen menü erişimleri pratikte sınanmıştır:
+o	Sipariş personeli → Sipariş Giriş ve Sipariş Onay ekranlarını açabilmiş
+o	Fatura silme, yetki değiştirme gibi ekranlar erişim dışı kalmıştır
+
+3. İşlem Simülasyonları (Senaryo Tabanlı Test)
+•	Her kullanıcı, kendisine atanmış rol çerçevesinde gerçek işlemlere benzer test senaryoları uygulamıştır:
+o	Sipariş personeli: Test siparişi girip onaya sunmuştur.
+o	Muhasebe personeli: Fatura kaydı girişi yapmayı denemiştir.
+o	Sistem yöneticisi: Yeni kullanıcı oluşturma ve yetki değişikliği gerçekleştirmiştir.
+•	Bu testler sırasında hatalı girişler, sistem uyarıları ve erişim kısıtlamaları aktif şekilde kontrol edilmiştir.
+
+4. Loglama ve Denetim Takibi
+•	Yapılan tüm test işlemleri sistemin log kayıtlarında incelenmiştir (defLog veya benzeri günlük izleme arayüzü).
+•	Hangi kullanıcının ne zaman, hangi işlemi yaptığı ve varsa yetki dışı deneme olup olmadığı detaylı biçimde raporlanmıştır.
+•	Yetki dışı işlem denemeleri sistem tarafından engellenmiş ve kullanıcıya uyarı verilmiştir.
+
+5. Tespit Edilen Sorunlar ve Çözümler
+Test sürecinde bazı kullanıcılar için şu sorunlar tespit edilmiş ve çözüme kavuşturulmuştur:
+•	Eksik rol ataması nedeniyle bazı kullanıcılar giriş ekranını görememiştir → defUserRole ekranında rol atamaları güncellenmiştir.
+•	İki kullanıcıya çakışan menü erişimi verilmiş → defRolMnu ekranından menü yetkileri yeniden düzenlenmiştir.
+
+2.14.d. Yeniden Değerlendirme
+1. İlk Testlerde Tespit Edilen Eksikliklerin İncelenmesi
+•	3 kullanıcıda eksik rol tanımlaması sonucu bazı ekranlara erişim hataları tespit edilmiştir.
+•	Bir kullanıcıya iki farklı rol atanmış, bu da sistemde çakışmalı yetkilere neden olmuştur.
+•	Bazı menü gruplarında gereksiz ekranlar işaretlenmiş, kullanıcıya ihtiyaç dışı yetkiler verilmiştir.
+•	Karmaşık parola nedeniyle bazı kullanıcılar sisteme giriş yapamamıştır.
+Bu eksiklikler “defUserRole” ve “defRolMnu” ekranları üzerinden detaylıca incelenmiştir.
+
+2. Eksiklerin Giderilmesi ve Sistemsel Düzeltmeler
+•	Hatalı rol atamaları silinmiş, her kullanıcıya yalnızca görev tanımına uygun tek bir rol atanmıştır.
+•	Gereksiz menü erişimleri kaldırılmış, yalnızca görev tanımıyla doğrudan ilişkili ekranlar erişime açık bırakılmıştır.
+•	Kullanıcı şifre yönergesi revize edilmiş; ilk şifreler daha anlaşılır ve sistemsel kurallara uygun biçimde yeniden üretilmiştir.
+•	Giriş deneme sınırı ve parola sıfırlama ekranı aktif hale getirilmiştir.
+
+3. Revize Edilen Yapının İkinci Tur Testi
+•	Güncellenen kullanıcı yetkileriyle birlikte ikinci tur test planı hazırlanmıştır.
+•	Sistem yöneticisi, test kullanıcılarıyla birlikte yeniden giriş denemeleri ve işlem simülasyonları gerçekleştirmiştir.
+•	Bu turda yapılan testlerde tüm kullanıcılar:
+o	Doğru ekranlara giriş yapabilmiş,
+o	Yetki dışı ekranlara ulaşamamış,
+o	İşlem kayıtları başarıyla sisteme işlenmiştir.
+
+4. Güvenlik ve İzlenebilirlik Kontrolü
+•	Güncellenen kullanıcı yetkileriyle yapılan testlerde, sistemin güvenlik protokolleri yeniden kontrol edilmiştir.
+•	Log dosyaları tekrar gözden geçirilmiş, test sonuçlarının sistemde kayda geçtiği doğrulanmıştır.
+
+5. Nihai Hazırlık
+•	Sistem yöneticisi tarafından yapılan toplantıda canlıya geçiş için nihai uygunluk kararı verilmiştir.
+•	Sistemin test sonrası güncellenmiş yapısı, beklenen işlevselliği ve güvenlik düzeyini sağladığı için ek bir müdahaleye gerek kalmamıştır.
+
+
+2.14.e. Sonuçların Değerlendirmesi
+Yapılan bu değerlendirme, yalnızca sistemin çalışıp çalışmadığını değil, aynı zamanda işletmeye katma değer üretip üretmediğini, riskleri azaltıp azaltmadığını ve gelecekte sürdürülebilir bir sistem sunup sunmadığını ortaya koymaktadır.
+1. Kuruma Katkı ve Operasyonel Fayda
+•	ERP sistemi, sistem yönetimi modülü sayesinde kullanıcı bazlı yapılandırılmış; her departman yalnızca kendi görevine uygun ekran ve işlemlere erişebilecek şekilde sınırlandırılmıştır.
+•	Bu yapı, kullanıcı hatalarını en aza indirmiş, iş akışlarında hız ve netlik sağlamış ve operasyonel verimliliği artırmıştır.
+•	Manuel işlemlerden kaynaklanan zaman kayıpları ve veri çakışmaları ortadan kalkmıştır.
+
+2. Güvenlik ve Denetlenebilirlik Başarısı
+•	Canlıya geçiş sonrası aktif edilen loglama sistemi sayesinde her kullanıcının yaptığı işlem detaylı şekilde izlenebilir hale gelmiştir.
+•	Rol bazlı erişim kontrolü, yetkisiz girişleri engellemiş; güvenlik politikaları (PC eşleştirme, IP kısıtı, parola kuralları) etkili biçimde uygulanmıştır.
+•	Bu yapı, hem kurum içi bilgi güvenliği hem de dış denetimlerde raporlama kolaylığı açısından önemli bir avantaj sağlamıştır.
+
+3. Kullanılabilirlik ve Kullanıcı Uyumu
+•	Kullanıcılar, sistem yönetimi modülü üzerinden tanımlanan sade ve görev odaklı menü yapısı sayesinde sisteme kısa sürede uyum sağlamıştır.
+•	İlk günlerde destek birimine gelen kullanıcı kaynaklı hata sayısı beklenenin altında kalmıştır.
+•	Eğitim süreci etkili olmuş, kullanıcılar sistemle ilgili temel yetkinlikleri hızlıca kazanmıştır.
+
+
+
+4. Sistemsel Olgunluk ve Gelecek Uyumuna Hazırlık
+•	Sistem yönetimi modülünün doğru yapılandırılması, DUYBS Su Fabrikası’nın ileride yeni modüller ekleyebilmesi, yeni kullanıcılar tanımlayabilmesi ve süreçleri genişletebilmesi açısından altyapı hazırlığını tamamlamıştır.
+•	Yetki ve erişim şablonlarının oluşturulmuş olması, sistemin ilerleyen dönemlerde ölçeklenebilirliğini kolaylaştıracaktır.
+•	ERP sisteminin teknik kapasitesi ve güvenlik protokolleri, uzun vadeli kullanım için yeterli düzeyde görülmüştür.
+
+5. Stratejik Değerlendirme
+•	AVAKOZA ERP sistemi, sistem yönetimi modülü üzerinden tüm kullanıcı yönetimi ve sistem güvenliği süreçlerini merkezi biçimde kontrol edilebilir hale getirmiştir.
+•	Bu yapı, DUYBS Su Fabrikası'nın kurumsal dijitalleşme stratejisinin önemli bir adımı olarak değerlendirilmiştir.
+•	Geçiş süreci sonunda kurum, bilgi sistemlerini daha bütüncül, izlenebilir ve sürdürülebilir şekilde yönetme yeteneği kazanmıştır.
+
+2.15. Sonuç
+Bu çalışma kapsamında bir işletmenin kurumsal kaynak planlama (ERP) sistemine geçiş süreci tüm yönleriyle ele alınmış, hem teorik hem de uygulamalı olarak yapılandırılmıştır. Sürecin başından itibaren analiz, tasarım, sistem kurulum, test, eğitim ve değerlendirme gibi tüm aşamalar sistematik biçimde incelenmiş; her adım işletme ihtiyaçlarına göre özel olarak uyarlanmıştır. DUYBS Su Fabrikası örneği üzerinden ilerleyen bu proje, bir ERP geçişinin yalnızca teknik bir uygulama değil, aynı zamanda organizasyonel bir dönüşüm olduğunu göstermektedir.
+Çalışmanın ilk adımlarında sistemin analiz edilmesiyle işe başlanmıştır. İş süreçleri gözlemlenmiş, veri akışları çıkarılmış ve modüller arası ilişkiler netleştirilmiştir. Bu analiz sayesinde sistemde kimlerin neye ihtiyaç duyduğu, verilerin nereden gelip nereye aktarılması gerektiği ve modüllerin nasıl entegre olması gerektiği detaylı biçimde belirlenmiştir. Özellikle sipariş, üretim, tedarik, muhasebe, satın alma ve nakit yönetimi gibi birimler arasındaki bağlantılar netleştirilmiş; tüm sistemin işleyişi görselleştirilerek planlamaya aktarılmıştır.
+Sistemin kalbi olarak tanımlanabilecek olan sistem yönetimi modülü, bu çalışmada merkezi bir rol üstlenmiştir. Sistem yönetimi yalnızca kullanıcı tanımlamakla kalmamış, aynı zamanda sistemin güvenlik politikalarını, erişim yapılarını, cihaz kontrollerini ve log sistemini yöneten yapı olarak ERP’nin kontrol paneli haline gelmiştir. Kullanıcıların yetkilendirilmesi, hangi ekranlara hangi rollerin erişeceği, giriş güvenliği, parola politikaları gibi detayların tamamı bu modül üzerinden yürütülmüştür. Bu yapı sayesinde sistemde hiyerarşik düzen korunmuş, yetki dışı işlemler önlenmiş ve tüm işlemler denetlenebilir hale gelmiştir.
+Canlıya geçiş öncesi gerçekleştirilen testler ve yeniden değerlendirme süreci, sistemin planlandığı gibi çalışıp çalışmadığını anlamak açısından oldukça önemli bir basamak olmuştur. Bu süreçte çeşitli kullanıcı senaryoları test edilmiş, rol çakışmaları ve eksik yetkilendirmeler gibi sorunlar tespit edilmiştir. Bu eksiklikler hızla düzeltilmiş ve yeniden test edilerek sistemin kararlı hale gelmesi sağlanmıştır. Aynı zamanda kullanıcı eğitimi süreçleri de detaylı biçimde planlanmış ve ERP’yi kullanacak personelin sisteme adaptasyonu kolaylaştırılmıştır.
+Çalışma boyunca bazı zorluklar da yaşanmıştır. Özellikle kullanıcı bazlı rol tanımlamalarında detayların fazlalığı nedeniyle başlangıçta çakışmalar oluşmuş, aynı kişinin farklı ekranlara erişme ihtiyacı güvenlik ile kullanım kolaylığı arasında denge kurmayı zorlaştırmıştır. Şifre politikalarının karmaşık olması, bazı kullanıcılar için sisteme ilk girişte sıkıntı yaratmış; bu durum şifre yönergelerinin sadeleştirilmesi ile çözülmüştür. Bununla birlikte, test ortamı ile canlı ortam arasında veritabanı farklarının iyi yönetilmesi gerektiği de süreçte öğrenilen önemli bir noktadır.
+Bütün bu sürecin sonunda DUYBS Su Fabrikası için güvenli, sürdürülebilir ve genişletilebilir bir ERP altyapısı oluşturulmuştur. İş süreçleri dijital ortama başarıyla taşınmış; departmanlar arası bilgi akışı hızlanmış, manuel hatalar minimuma indirilmiştir. Kullanıcıların yalnızca yetkili oldukları işlemleri yapabildiği bu sistem yapısı, işletmenin veri güvenliği açısından kurumsal bir disiplin kazanmasını sağlamıştır.
+Bu raporun sonucunda görüldüğü gibi, ERP sistemine geçiş yalnızca bir yazılım yükleme işlemi değil; aynı zamanda kurumsal süreçlerin yeniden yapılandırılması, dijitalleşme kültürünün yerleştirilmesi ve bilgi güvenliği farkındalığının artırılmasıdır. Sistem yönetimi modülü, bu sürecin altyapısını oluşturarak kuruma kontrol, esneklik ve denetim kazandırmıştır. Gelecekte yapılacak modül genişletmeleri, dış sistem entegrasyonları ve analiz raporlamaları için şimdiden güçlü bir temel hazırlanmıştır. Bu kapsamda çalışma, hem akademik hem de uygulamalı açıdan başarılı ve sonuç odaklı bir ERP geçiş örneği olarak değerlendirilebilir.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2.16. Kaynakça
+•	Bradford, M. (2015). Modern ERP: Select, implement, and use today's advanced business systems (3rd ed.). Lulu.com.
+•	ERP-Link. (2019). ERP-Link administration guide.
+•	Güler, A. E. (2023). DIA sistem yönetimi eğitim notları (2_YV_MD2_AEG_MA1_2.pdf). Erişim adresi: https://www.diaakademi.com/dia-egitim-videolari/sistem-yonetimi
+•	IAS. (2005). IAS ERP system documentation (2_YV_MD2_BAB_MA1.pdf).
+•	Klaus, H., Rosemann, M., & Gable, G. G. (2000). What is ERP?. Information Systems Frontiers, 2(2), 141–162. https://doi.org/10.1007/BF01205320
+•	Monk, E., & Wagner, B. (2012). Concepts in enterprise resource planning (4th ed.). Cengage Learning.
+•	Özdemir, S. (2018). Kurumsal kaynak planlama sistemleri ve uygulamaları. Nobel Akademik Yayıncılık.
+•	Özdemir, S. (2021). Kurumsal kaynak planlama sistemleri ve modül bazlı işleyiş. Bilgi Sistemleri Dergisi, 9(2), 55–72.
+
+
+2.17 Ekler
+Ek 1. AVAKOZA ERP – Kullanıcı Tanımlama Ekranı (defUsr)
+Kullanıcı adı, soyadı, e-posta, şifre ve aktiflik tanımlama ekranı yer alır.
+Ek 2. AVAKOZA ERP – Uygulama ve Rol Atama Ekranı (defUserAppAndRole)
+Kullanıcıların hangi uygulamada hangi rolle işlem yapacağını belirleyen ekran.
+Ek 3. AVAKOZA ERP – Rol Tanımlama Ekranı (defRol)
+Admin, Çırak, Kalfa gibi rollerin modül bazlı ayrımının yapıldığı alan.
+Ek 4. AVAKOZA ERP – Menü Yetkilendirme Ekranı (defRolMnu)
+Rollere göre hangi menülerin ve ekranların aktif olacağını tanımlayan yetkilendirme arayüzü.
+Ek 5. AVAKOZA ERP – Sistem Mesajları Tanım Ekranı (defSysMsg)
+Kritik uyarı, bilgi ve hata mesajlarının sistem tarafından nasıl kodlandığını gösteren tablo.
+Ek 6. AVAKOZA ERP – Güncelleme Parametreleri Ekranı
+Uygulama güncelleme zaman aralıkları, açılış saatleri ve sürüm kontrol parametreleri.
+Ek 7. AVAKOZA ERP – Kısa Yol Tuşları Ekranı (defSck)
+Sistemde kullanılan fonksiyonel kısayolların tanımlı olduğu panel (örn. Ctrl+A).
+Ek 8. AVAKOZA ERP – Uygulama Tanımı ve Dil Ayarları (defApp)
+Kullanılan modül isimleri, tanımları ve çok dilli kullanım seçenekleri.
+Ek 9. AVAKOZA ERP – Uygulama Güncelleme Yönetimi (defAppUpgrade)
+Sisteme entegre tüm uygulamaların listesini ve versiyon kontrol ekranını içeren yapı.
+ 
+ 
+
+
